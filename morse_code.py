@@ -7,12 +7,6 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
 
-# @socketio.on('message')
-# def handle_message(data, message):
-#     print('received ' + data + ': ' + message)
-#     send(message)
-
-
 def decodeMorse(morseCode):
     if morseCode:
         MORSE_DICT = {
@@ -38,7 +32,6 @@ def decodeMorse(morseCode):
             results.append(MORSE_DICT.get(letter))
 
         return results
-
 
 
 @socketio.on('message')
